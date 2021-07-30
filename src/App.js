@@ -31,10 +31,15 @@ export class App extends Component {
   }
 
   onDispatch = (value) => {
-    const {indexOfDenominator} = this.state;
+    const {indexOfDenominator, denominationAmount} = this.state;
     let numericValue = parseInt(value);
     this.setState({dispatchAmount: numericValue});
     const newValue = [];
+
+    if(denominationAmount > value) {
+      message.warning('Warning: Amount is lower than denomination value');
+    }
+
     if (numericValue < 10 || numericValue % 10 !== 0) {
       message.error('Invalid Input, Please retry with a new amount');
       return;
@@ -87,7 +92,7 @@ export class App extends Component {
           <Option value="1000">1000</Option>
         </Select>
 
-        <Search type="number" placeholder="Amount" allowClear enterButton="Dispatch" size="small" onSearch={this.onDispatch} />
+        <Search type="number" placeholder="Amount" enterButton="Withdraw" size="small" onSearch={this.onDispatch} />
 
         {
           dispatchedNotes.length > 0 &&
