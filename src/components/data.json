@@ -1,0 +1,10 @@
+{
+    "denomination": [10, 20, 50, 100, 200, 500, 1000],
+    "tagColors": ["magenta", "red", "cyan", "blue", "green", "lime", "purple"],
+    "defaultTotalAmount": 100000,
+    "defaultDenomination": false,
+    "defaultDenominationAmount": 0,
+    "defaultdispatchAmount": 0,
+    "defaultDispatchedNotes": {},
+    "defaultIndexOfDenominator": 0
+}
