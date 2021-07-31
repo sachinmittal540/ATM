@@ -35,6 +35,7 @@ export class App extends Component {
 
     if(denominationAmount > value) {
       message.warning('Warning: Amount is lower than denomination value');
+      return;
     }
 
     if (numericValue < 10 || numericValue % 10 !== 0) {
